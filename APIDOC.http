@@ -1,0 +1,4 @@
+# api call for listing all leads
+####
+GET http://127.0.0.1:8000/api/leads/
+Accept: application/json
