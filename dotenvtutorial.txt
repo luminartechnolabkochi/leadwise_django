@@ -1,0 +1,23 @@
+step1:pip install python-dotenv
+
+step2:create a .env file in root folder and add credential
+
+# .env file
+DEBUG=True
+SECRET_KEY=your-secret-key-here
+DATABASE_URL=postgres://user:password@localhost:5432/db_name
+
+
+step3: load variable 
+
+import os
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Read environment variables
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG') == 'True'
