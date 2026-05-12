@@ -2,6 +2,7 @@
 ####
 GET http://127.0.0.1:8000/api/leads/
 Accept: application/json
+Authorization: Token c908d29f7a1720b07a9eb9a8e3263eb5b75dfd40
 
 #Api call for creating lead
 ###
@@ -48,3 +49,22 @@ Content-Type: application/json
 ###
 DELETE  http://127.0.0.1:8000/api/leads/1/
 Accept: application/json
+
+
+#api call for lead summary
+###
+GET  http://127.0.0.1:8000/api/leads/summary/
+Accept: application/json
+
+
+#api call for getting token
+###
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+  "username":"admin",
+  "password":"admin"
+}
+
+# localStorage 

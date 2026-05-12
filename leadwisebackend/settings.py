@@ -16,6 +16,9 @@ import os
 
 from dotenv import load_dotenv
 
+import dj_database_url
+
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     "api",
     "rest_framework",
      "corsheaders",
+      'rest_framework.authtoken',
     
 ]
 
@@ -116,6 +120,13 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
+}
+
+
+DATABASES = {
+    'default': dj_database_url.parse(
+        os.getenv("DATABASE_URL")
+    )
 }
 
 # Password validation
